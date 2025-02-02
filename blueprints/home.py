@@ -15,7 +15,7 @@ def home():
     
     return render_template('home.html', user_info=user_info, playlists=playlists)
 
-@home_bp.route('/playlist/<playlist_id>')
+@home_bp.route('/view_songs/<playlist_id>')
 def view_songs(playlist_id):
     token_info = session.get('token_info', None)
     if not token_info:
