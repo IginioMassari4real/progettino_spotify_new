@@ -4,10 +4,7 @@ from spotipy.oauth2 import SpotifyOAuth
 #le tue credenziali le trovi nella dashboard di prima
 SPOTIFY_CLIENT_ID = "9214bb00011c4ac88e9abb2b6ce04ae1"
 SPOTIFY_CLIENT_SECRET = "9412f99b5b05479ba88d0e6fa06d3afd"
-SPOTIFY_REDIRECT_URI = "https://5000-iginiomassa-progettinos-a66984nlobl.ws-eu117.gitpod.io/callback" #dopo il login andiamo qui
-
-app = Flask(__name__)
-app.secret_key = 'chiave_per_session' #ci serve per identificare la sessione
+SPOTIFY_REDIRECT_URI = "https://5000-iginiomassa-progettinos-e6gis2lgml2.ws-eu117.gitpod.io/callback" #dopo il login andiamo qui
 
 #config SpotifyOAuth per l'autenticazione e redirect uri
 sp_oauth = SpotifyOAuth(
@@ -19,4 +16,4 @@ sp_oauth = SpotifyOAuth(
 )
 
 def get_spotify_object (token_info):
-    return spotify.Spotify(auth=token_info['access_token'])
+    return spotipy.Spotify(auth=token_info['access_token'])

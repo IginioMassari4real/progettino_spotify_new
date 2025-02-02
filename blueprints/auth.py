@@ -1,4 +1,3 @@
-from flask import Flask
 from flask import Blueprint, redirect, request, url_for, session
 from services.spotify_oauth import sp_oauth, get_spotify_object
 
